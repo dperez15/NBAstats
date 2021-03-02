@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>User Details</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <h2>User Details</h2>
+    <div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Name:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${user.name}">Name</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Email:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${user.email}">Email</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Password:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${user.password}">Password</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Color:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${user.color}">Color</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">FavTeam:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${user.favTeam}">FavTeam</p>
+                </div>
+            </div>
+        </form>
+        <a href='/users/'>Back to User List</a>
+    </div>
+</div>
+
+</body>
+</html>

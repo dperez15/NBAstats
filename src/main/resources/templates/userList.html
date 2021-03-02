@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>User</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+<a href='/users/new'>Create User</a>
+    <hr>
+    <div th:if="${not #lists.isEmpty(users)}">
+        <h3>User List</h3>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Color</th>
+                <th>FavTeam</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}">Id</td>
+                <td th:text="${user.name}">Name</td>
+                <td th:text="${user.email}">Email</td>
+                <td th:text="${user.password}">Password</td>
+                <td th:text="${user.color}">Color</td>
+                <td th:text="${user.favTeam}">FavTeam</td>
+
+                <td><a th:href="${ '/users/'        + user.id}">View</a></td>
+                <td><a th:href="${ '/users/edit/'   + user.id}">Edit</a></td>
+                <td><a th:href="${ '/users/delete/' + user.id}">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

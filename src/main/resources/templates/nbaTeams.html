@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>User</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>NBA</title>
+    <style>
+
+        body {
+            background-image: url('images/NBA\ LOGO.jpg');
+            background-image: 10%,10%;
+            background-repeat: no-repeat;
+
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 20px;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .table-striped {
+            background-color: #e6e4d8;
+        }
+
+        .table-striped>tbody>tr:nth-child(odd)>td,
+        .table-striped>thead>tr:nth-child(odd)>th {
+            background-color: rgba(48, 38, 126, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <select id="season">
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+    </select>
+    <input id='league' type="number" min=1 max=3 value=1>
+    <a href="/users/new"><button> Sign Up</button></a>
+
+
+
+    <label for="conference">Conference</label>
+
+    <input id='conference' type="text">
+    <button onclick='getNBATeams()'>Get NBA Teams</button>
+    <p><strong> Sign up to have a better experience!</strong></p>
+    <table id='team'></table>
+    <section id='teams'></section>
+</div>
+<script src='../js/sports.js'></script>
+</body>
+
+</html>
